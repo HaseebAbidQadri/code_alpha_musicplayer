@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player - CodeAlpha</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background gradient -->
+    <div class="background-gradient"></div>
+    <div class="music-player glassmorphic modern-player">
+        <header class="main-header">
+            <div class="logo"><i class="fas fa-music"></i> CodeAlpha</div>
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="music-tab"><i class="fas fa-headphones"></i> Music</button>
+                <button class="tab-btn" data-tab="library-tab"><i class="fas fa-list"></i> Library</button>
+                <button class="tab-btn" data-tab="about-tab"><i class="fas fa-info-circle"></i> About</button>
+            </nav>
+        </header>
+        <div class="tab-content">
+            <section id="music-tab" class="tab-section active">
+                <div class="album-art-container">
+                    <div class="album-art neon-glow" id="album-art-click">
+                        <div class="vinyl-effect"></div>
+                        <img id="album-image" src="dj.jpg" alt="Album Art">
+                        <div class="album-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="song-info">
+                    <h2 id="song-title">Song Title</h2>
+                    <p id="artist-name">Artist Name</p>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                        <div class="progress-handle" id="progress-handle"></div>
+                    </div>
+                    <span id="duration">0:00</span>
+                </div>
+                <div class="controls shadowed">
+                    <button class="control-btn" id="prev-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="control-btn play-pause" id="play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-btn" id="next-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                <div class="volume-container shadowed">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="additional-controls shadowed">
+                    <button class="control-btn" id="shuffle-btn" title="Shuffle">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="control-btn" id="repeat-btn" title="Repeat">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button class="control-btn" id="autoplay-btn" title="Autoplay">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </section>
+            <section id="library-tab" class="tab-section">
+                <div class="playlist shadowed">
+                    <h3>Playlist</h3>
+                    <div class="playlist-items" id="playlist-items">
+                        <!-- Playlist items will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+            <section id="about-tab" class="tab-section">
+                <div class="about-content shadowed">
+                    <h3>About</h3>
+                    <p>This is a modern, vibrant music player built with CodeAlpha.<br>
+                    <small>Design by <b>You</b> &amp; Copilot</small></p>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <span>🎵 CodeAlpha Music Player &copy; 2024</span>
+        </footer>
+    </div>
+    
+    <audio id="audio-player"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
